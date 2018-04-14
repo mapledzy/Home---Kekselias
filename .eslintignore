@@ -1,1 +1,3 @@
 /node_module/*
+scripts/webpack.prod.conf.js
+src/scss/demo.css

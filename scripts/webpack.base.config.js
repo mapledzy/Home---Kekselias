@@ -1,16 +1,16 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const webpack = require('webpack');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-function resolve(relaredPath) {
-  return path.join(__dirname, relaredPath);
+
+function resolve(dir) {
+  return path.join(__dirname, '..', dir);
 }
 
 const webpackConfigBase = {
   entry: {
-    client: resolve('../dist'),
+    app: resolve('src/index.jsx'),
   },
   output: {
     path: resolve('../dist'),
@@ -18,10 +18,11 @@ const webpackConfigBase = {
     chunkFilename: 'chunks/[name].[hash:4].js',
   },
   resolve: {
-    extensions: ['.js', '.json'], // TODO: jsx
+    extensions: ['.js', '.jsx', '.json'], // TODO: jsx
     alias: {
-      style: path.join(__dirname, './../src/scss'),
-      images: path.join(__dirname, './../src/img'),
+      style: resolve('src/scss'),
+      images: resolve('src/img'),
+      '@': resolve('src'),
     },
   },
   resolveLoader: {
@@ -31,7 +32,8 @@ const webpackConfigBase = {
     rules: [
       {
         test: /\.js[x]?$/,
-        exclude: resolve('../node_modules/'),
+        exclude: resolve('node_modules'),
+        include: resolve('src'),
         loader: 'babel',
       },
       {
@@ -44,10 +46,21 @@ const webpackConfigBase = {
           fallback: 'style-loader',
         }),
       },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)$/,
+        loader: 'url',
+        options: {
+          limit: 10000,
+          name: 'img/[name].[hash:4].[ext]',
+        },
+      },
     ],
   },
   plugins: [
-    new ExtractTextPlugin('style.[hash:4].css'),
+    new ExtractTextPlugin('css/style.[hash:4].css'),
+    new HtmlWebpackPlugin({
+      template: resolve('index.html'),
+    }),
   ],
 };
 

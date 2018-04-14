@@ -1,0 +1,42 @@
+.o-lines_background {
+    position: fixed;
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+.o-lines_background {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    overflow: hidden;
+
+    width: 101vw;
+}
+
+.o-lines-background_line {
+    z-index: 0;
+
+    width: 11.11vw;
+
+    border-right: 1px solid rgba(0, 0, 0, .08);
+}
+
+.o-lines-background_line {
+    position: relative;
+
+    display: inline-block;
+    overflow: hidden;
+
+    height: 100vh;
+
+    @media (max-width: 1366px) {
+        width: 16.66vw;
+    }
+
+    @media (max-width: 999px) {
+        width: 33.33vw;
+    }
+}
