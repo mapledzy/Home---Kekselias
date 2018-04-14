@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../../img/logo.svg';
-
 import './style.scss';
 
 class Sidebar extends Component {
@@ -16,12 +14,33 @@ class Sidebar extends Component {
         <figure className="c-sidebar-logo">
           <a href="https://github.com/mapledzy/Home---Kekselias" data-route="hemo" >
             { /* eslint-disable global-require */}
-            <img src={logo} alt="" />
+            {/* <img src={require('../../img/logo.jpg')} alt="" /> */}
             {/* eslint-enable global-require */}
           </a>
         </figure>
-        <nav>1</nav>
-        <a href="www.baidu.com">1</a>
+        <nav className="c-sidebar-menu">
+          <ul className="c-sidebar-submenu">
+            <li className="c-sidebar-sublink c-sidebar-menu-item active"><a href="https://github.com">All articles</a></li>
+            <li className="c-sidebar-sublink c-sidebar-menu-item"><a href="https://github.com">Capital Markets</a></li>
+            <li className="c-sidebar-sublink c-sidebar-menu-item"><a href="https://github.com">Central Banks</a></li>
+            <li className="c-sidebar-sublink c-sidebar-menu-item"><a href="https://github.com">Economics</a></li>
+            <li className="c-sidebar-sublink c-sidebar-menu-item"><a href="https://github.com">Financial Models</a></li>
+            <li className="c-sidebar-sublink c-sidebar-menu-item"><a href="https://github.com">Other</a></li>
+          </ul>
+
+          <ul className="c-sidebar-submenu">
+            <li className="c-sidebar-link">
+              <a href="https://github.com/">Services</a>
+            </li>
+            <li className="c-sidebar-link">
+              <a href="https://github.com/">About us</a>
+            </li>
+            <li className="c-sidebar-link">
+              <a href="https://github.com/">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <a className="c-sidebar-button" href="www.baidu.com">Contact us</a>
       </section>
     );
   }

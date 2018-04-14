@@ -16,6 +16,7 @@ const webpackConfigBase = {
     path: resolve('../dist'),
     filename: '[name].[hash:4].js',
     chunkFilename: 'chunks/[name].[hash:4].js',
+    // publicPath: 'dist/',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'], // TODO: jsx
@@ -37,7 +38,7 @@ const webpackConfigBase = {
         loader: 'babel',
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         use: ExtractTextPlugin.extract({
           use: [
             { loader: 'css-loader' },
@@ -47,7 +48,7 @@ const webpackConfigBase = {
         }),
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)$/,
+        test: /\.(png|jpe?g|gif|jpg)(\?.*)$/,
         loader: 'url',
         options: {
           limit: 10000,
