@@ -1,0 +1,10 @@
+.content {
+  width: 100%;
+  margin-left: 11.11vw;
+  min-height: 100vh;
+  overflow: hidden;
+
+  @media (max-width: 1366px) {
+    margin-left: 16.6vw;
+  }
+}

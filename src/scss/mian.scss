@@ -1,7 +1,16 @@
 html {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    // overflow-y: auto;
+}
+
+body.active {
+    overflow-y: hidden;
 }
 
 h1 {
-  color:darkorange
+    color: darkorange;
 }

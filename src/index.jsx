@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'normalize.css';
-import './scss/mian.scss';
 import App from './App';
 
 /* eslint-disable no-undef */
-document.title = '(๑′ᴗ‵๑)Ｉ Lᵒᵛᵉᵧₒᵤ❤';
+document.title = '埃尔丁图书馆';
 
 ReactDOM.render(
   <App />,
-  document.getElementById('oreki'),
+  document.getElementById('content'),
 );
 
 if (module.hot) {

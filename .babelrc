@@ -6,5 +6,5 @@
     "stage-0",
     "react"
   ],
-  "plugins": []
+  "plugins": ["transform-object-rest-spread"]
 }
